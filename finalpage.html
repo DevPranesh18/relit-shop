@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;ReLit — Refurbished Phones Store&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Colors matching logo */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg:#f5f7fb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--card:#fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--muted:#6b7280;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent:#1e40af; /* Adjusted to match logo blue */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--max:1100px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body{margin:0;background:var(--bg);color:#071033}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.wrap{max-width:var(--max);margin:28px auto;padding:20px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header{display:flex;align-items:center;gap:16px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand img{height:40px;object-fit:contain}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.search{margin-left:20px;flex:1}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.search input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #d6dce6}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.top-actions{display:flex;gap:8px}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero{display:flex;align-items:center;justify-content:space-between;margin-top:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero .info{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.04);flex:1;margin-right:12px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero .actions{width:260px}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card{background:var(--card);border-radius:10px;padding:12px;box-shadow:0 6px 14px rgba(11,18,32,0.04);border:1px solid rgba(11,18,32,0.02)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card img{width:100%;height:180px;object-fit:contain;border-radius:6px;background:#f3f6fb}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.title{font-weight:700;margin-top:8px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.price{font-weight:800;margin-top:6px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.meta{color:var(--muted);font-size:13px;margin-top:6px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card .actions{display:flex;gap:8px;margin-top:10px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn{background:var(--accent);color:white;padding:10px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:600}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.ghost{background:transparent;border:1px solid rgba(11,18,32,0.06);padding:10px 12px;border-radius:8px;cursor:pointer}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modalWrap{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(7,16,33,0.45);padding:20px;z-index:999}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal{width:980px;max-width:calc(100% - 40px);background:var(--card);border-radius:10px;padding:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.two{display:grid;grid-template-columns:360px 1fr;gap:18px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.specs{background:#fbfdff;border-radius:8px;padding:12px;border:1px solid rgba(11,18,32,0.04);margin-top:12px}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media(max-width:640px){.grid{grid-template-columns:1fr}.hero{flex-direction:column}}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>table{width:100%;border-collapse:collapse}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>th,td{padding:8px;border-bottom:1px solid #eef2f7;text-align:left}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.small-input{width:100%;padding:8px;border-radius:6px;border:1px solid #e2e8f0}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand"&gt;&lt;img src="https://i.postimg.cc/52qQ23Nm/temp-Image1-WVL5-F.avif" alt="ReLit Logo"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="search"&gt;&lt;input id="search" placeholder="Search products, e.g. iPhone 12, 128GB, Grade A" /&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="top-actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="ghost" id="adminBtn"&gt;Admin&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:18px;font-weight:800"&gt;Buy Refurbished Phones — Clean catalog&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="meta"&gt;Click a product to view specs, PDF report and buy. Buy redirects to WhatsApp with details.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;flex-direction:column;gap:8px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn" onclick="render();"&gt;Refresh&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="ghost" onclick="showAllGrades()"&gt;All Grades&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="gridWrap" class="grid"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;ReLit • All purchases redirect to WhatsApp for confirmation. Return window: 2 days from delivery.&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Product modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="modalWrap" id="modalWrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal" id="modal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;justify-content:space-between;align-items:center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 id="mTitle"&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="closeModal()" class="ghost"&gt;Close&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="two"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;img id="mImage" src="" alt="product" style="width:100%;height:320px;object-fit:contain;border-radius:8px;background:#f7fafc"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-top:10px;display:flex;gap:8px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a id="pdfLink" href="#" target="_blank" class="ghost"&gt;Open PDF Report&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="meta" id="mGrade"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex;justify-content:space-between;align-items:center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="price" id="mPrice"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="meta" id="mTag"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;button class="btn" onclick="openBuy()"&gt;Buy Now&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="specs" id="mSpecs"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Buy modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="modalWrap" id="buyWrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;Buy — &lt;span id="bTitle"&gt;&lt;/span&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:8px" class="meta"&gt;You'll be redirected to WhatsApp. Fill details below then click 'Proceed to WhatsApp'.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:12px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input id="bName" class="small-input" placeholder="Full name" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:8px;margin-top:8px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input id="bPhone" class="small-input" placeholder="Phone (eg +9198...)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input id="bSku" class="small-input" placeholder="SKU / Model code (optional)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;textarea id="bAddr" class="small-input" placeholder="Delivery address" style="margin-top:8px"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:8px;margin-top:8px;align-items:center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input id="bPincode" class="small-input" placeholder="Pincode" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input id="bEmail" class="small-input" placeholder="Email (optional)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn" onclick="proceedWhatsApp()"&gt;Proceed to WhatsApp&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="ghost" onclick="closeBuy()"&gt;Cancel&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="buyResult" style="margin-top:10px"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Admin page --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="adminPage" style="display:none;max-width:var(--max);margin:28px auto;padding:20px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="display:flex;justify-content:space-between;align-items:center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Admin — Manage Listings&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="ghost" onclick="closeAdmin()"&gt;Close Admin&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-top:12px;background:#fff;padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(11,18,32,0.03)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h4&gt;Add / Edit Product&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input id="pTitle" class="small-input" placeholder="Title e.g. iPhone 12 Pro 128GB" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input id="pPrice" class="small-input" placeholder="Price (number)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input id="pImage" class="small-input" placeholder="Image public URL" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input id="pPdf" class="small-input" placeholder="PDF report public URL (optional)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input id="pGrade" class="small-input" placeholder="Grade (A/B/C)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input id="pTag" class="small-input" placeholder="Short tag (e.g. A Grade)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;textarea id="pSpecs" class="small-input" placeholder='Specs as JSON: {"Storage":"128 GB","Color":"Black"}' style="grid-column:1/3;height:80px"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn" onclick="addOrUpdateProduct()"&gt;Add / Update&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="ghost" onclick="clearForm()"&gt;Clear&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="margin-top:12px;background:#fff;padding:12px;border-radius:8px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h4&gt;Current Listings&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;table id="adminTable"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;th&gt;Grade&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;/tbody&gt;&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const STORAGE_KEY='relit_products_v1';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const DEFAULT_PRODUCTS=[</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{id:Date.now(),title:'iPhone 12 Pro 128GB',price:21999,image_url:'https://via.placeholder.com/600x400?text=iPhone+12+Pro',grade:'A',pdf:'',tag:'A Grade',specs:{Storage:'128 GB',Color:'Silver',Battery:'Good',Condition:'No defects'}},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{id:Date.now()+1,title:'iPhone 11 64GB',price:13499,image_url:'https://via.placeholder.com/600x400?text=iPhone+11',grade:'B',pdf:'',tag:'B Grade',specs:{Storage:'64 GB',Color:'Black',Battery:'Good',Condition:'Minor defect'}}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function loadProducts(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>try{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const raw=localStorage.getItem(STORAGE_KEY);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(!raw){ localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_PRODUCTS)); return DEFAULT_PRODUCTS;}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return JSON.parse(raw);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}catch(e){return DEFAULT_PRODUCTS;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function saveProducts(arr){ localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let products=loadProducts();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const grid=document.getElementById('gridWrap');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function render(filter=''){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid.innerHTML='';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const q=filter.trim().toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>products.forEach(p=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(q){ const hay=(p.title+' '+(p.tag||'')+' '+(p.grade||'')+' '+JSON.stringify(p.specs||{})).toLowerCase(); if(!hay.includes(q)) return; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const el=document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>el.className='card';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>el.innerHTML=`&lt;img src='${p.image_url||'https://via.placeholder.com/600x400?text=No+Image'}' alt='${p.title}'/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class='title'&gt;${p.title}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class='price'&gt;₹${p.price.toLocaleString('en-IN')}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class='meta'&gt;${p.tag||''} • Grade ${p.grade||''}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class='actions'&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class='btn' onclick='openDetail(${p.id})'&gt;View&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class='ghost' onclick='quickBuy(${p.id})'&gt;Buy Now&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>grid.appendChild(el);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('search').addEventListener('input',(e)=&gt;{render(e.target.value);});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function showAllGrades(){document.getElementById('search').value='';render();}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function escapeHtml(s){return s?s.replace(/[&amp;&lt;&gt;"']/g,c=&gt;({'&amp;':'&amp;amp;','&lt;':'&amp;lt;','&gt;':'&amp;gt;','"':'&amp;quot;',"'":"&amp;#39;"}[c])):''}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let current=null;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function openDetail(id){current=products.find(x=&gt;x.id===id);if(!current) return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('mTitle').textContent=current.title;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('mImage').src=current.image_url||'https://via.placeholder.com/600x400?text=No+Image';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('mPrice').textContent='₹'+Number(current.price).toLocaleString('en-IN');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('mTag').textContent=current.tag||'';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('mGrade').textContent='Grade '+(current.grade||'');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const pdf=document.getElementById('pdfLink'); if(current.pdf){pdf.href=current.pdf; pdf.style.display='inline-block';} else{pdf.style.display='none';}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const s=document.getElementById('mSpecs'); s.innerHTML=''; if(current.specs){Object.keys(current.specs).forEach(k=&gt;{const r=document.createElement('div');r.style.display='flex';r.style.justifyContent='space-between';r.style.padding='6px 0'; r.innerHTML=`&lt;div style="color:var(--muted)"&gt;${k}&lt;/div&gt;&lt;div&gt;${current.specs[k]}&lt;/div&gt;`;s.appendChild(r);})}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('modalWrap').style.display='flex';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function closeModal(){document.getElementById('modalWrap').style.display='none';}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function quickBuy(id){current=products.find(x=&gt;x.id===id); if(!current)return; openBuy();}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function openBuy(){document.getElementById('bTitle').textContent=current.title; document.getElementById('buyWrap').style.display='flex';}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function closeBuy(){document.getElementById('buyWrap').style.display='none'; document.getElementById('buyResult').innerHTML='';}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function proceedWhatsApp(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const name=document.getElementById('bName').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const phone=document.getElementById('bPhone').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const sku=document.getElementById('bSku').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const addr=document.getElementById('bAddr').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const pincode=document.getElementById('bPincode').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const email=document.getElementById('bEmail').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!name||!phone){document.getElementById('buyResult').innerHTML='&lt;div style="color:#c23"&gt;Please enter name and phone.&lt;/div&gt;'; return;}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const oid='RL'+Date.now().toString().slice(-6);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const seller='+919414829196';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const msg=`Order: ${oid}</p>
+<p class="p1">Product: ${current.title}</p>
+<p class="p1">Price: ₹${current.price.toLocaleString('en-IN')}</p>
+<p class="p1">SKU: ${sku||'-'}</p>
+<p class="p1">Name: ${name}</p>
+<p class="p1">Phone: ${phone}</p>
+<p class="p1">Pincode: ${pincode||'-'}</p>
+<p class="p1">Address: ${addr||'-'}</p>
+<p class="p1">Email: ${email||'-'}</p>
+<p class="p1">PDF Report: ${current.pdf||'-'}</p>
+<p class="p1">Please confirm.`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const wa=`https://wa.me/${seller.replace('+','')}?text=${encodeURIComponent(msg)}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>window.open(wa,'_blank');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('buyResult').innerHTML=`&lt;div style="color:green"&gt;Opened WhatsApp. Order ID: ${oid}&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('adminBtn').addEventListener('click',()=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const pass=prompt('Enter admin password');<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(pass==='pm@112351'){openAdmin();} else{alert('Wrong password');}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function openAdmin(){document.querySelector('.wrap').style.display='none'; document.getElementById('adminPage').style.display='block'; renderAdminTable();}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function closeAdmin(){document.getElementById('adminPage').style.display='none'; document.querySelector('.wrap').style.display='block'; render();}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function addOrUpdateProduct(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const title=document.getElementById('pTitle').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const price=Number(document.getElementById('pPrice').value.trim());</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const image_url=document.getElementById('pImage').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const pdf=document.getElementById('pPdf').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const grade=document.getElementById('pGrade').value.trim().toUpperCase();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tag=document.getElementById('pTag').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let specs={};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>try{specs=document.getElementById('pSpecs').value?JSON.parse(document.getElementById('pSpecs').value):{};}catch(e){alert('Specs JSON error'); return;}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!title||!price||!image_url){alert('Title, price, image required');return;}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const existing=products.find(x=&gt;x.title===title &amp;&amp; Number(x.price)===price);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(existing){existing.image_url=image_url;existing.pdf=pdf;existing.grade=grade;existing.tag=tag;existing.specs=specs;}else{products.push({id:Date.now(),title,price,image_url,pdf,grade,tag,specs});}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>saveProducts(products); renderAdminTable(); alert('Saved');<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderAdminTable(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tbody=document.querySelector('#adminTable tbody'); tbody.innerHTML='';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>products.forEach(p=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const tr=document.createElement('tr');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tr.innerHTML=`&lt;td&gt;${p.title}&lt;/td&gt;&lt;td&gt;₹${p.price.toLocaleString('en-IN')}&lt;/td&gt;&lt;td&gt;${p.grade||''}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;td&gt;&lt;button class='ghost' onclick='editProduct(${p.id})'&gt;Edit&lt;/button&gt; &lt;button class='ghost' onclick='deleteProduct(${p.id})'&gt;Delete&lt;/button&gt;&lt;/td&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tbody.appendChild(tr);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function editProduct(id){const p=products.find(x=&gt;x.id===id);if(!p)return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pTitle').value=p.title;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pPrice').value=p.price;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pImage').value=p.image_url;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pPdf').value=p.pdf||'';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pGrade').value=p.grade||'';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pTag').value=p.tag||'';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('pSpecs').value=JSON.stringify(p.specs,null,2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>window.scrollTo({top:0,behavior:'smooth'});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function deleteProduct(id){if(!confirm('Delete this product?'))return; products=products.filter(x=&gt;x.id!==id);saveProducts(products);renderAdminTable();}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function clearForm(){['pTitle','pPrice','pImage','pPdf','pGrade','pTag','pSpecs'].forEach(id=&gt;document.getElementById(id).value='');}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// modals click outside</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('modalWrap').addEventListener('click', e=&gt;{if(e.target.id==='modalWrap')closeModal();});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('buyWrap').addEventListener('click', e=&gt;{if(e.target.id==='buyWrap')closeBuy();});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// initial render</p>
+<p class="p1"><span class="Apple-converted-space">    </span>render();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>renderAdminTable();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
